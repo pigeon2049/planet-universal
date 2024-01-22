@@ -45,7 +45,7 @@ public class UpdateGasPrice implements CommandLineRunner {
     public void run(String... args) throws Exception {
         InfluxDBClient client = InfluxDBClientFactory.create(url, token.toCharArray(), org, bucket)
                 .setLogLevel(LogLevel.BASIC);
-        WriteApi writeApi = client.makeWriteApi(WriteOptions.builder().flushInterval(5_000).build());
+        WriteApi writeApi = client.makeWriteApi(WriteOptions.builder().flushInterval(2_000).build());
 
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
