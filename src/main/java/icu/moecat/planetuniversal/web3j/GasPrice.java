@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.web3j.protocol.Web3j;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @Service
@@ -23,6 +24,11 @@ public class GasPrice {
         BigInteger gasPrice = web3j.ethGasPrice().send().getGasPrice();
         double price = gasPrice.longValue() * 0.000000001;
         return String.format("%.2f",price);
+    }
+
+    public BigInteger gasGasPrice() throws IOException {
+
+        return web3j.ethGasPrice().send().getGasPrice();
     }
 
 

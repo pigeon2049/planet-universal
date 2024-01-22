@@ -17,5 +17,16 @@ services:
       - 127.0.0.1:5001:5001
       # HTTP Gateway
       - 127.0.0.1:28080:8080
+  influxdb:
+    container_name: influxdb
+    image: influxdb:2.7.5-alpine
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    env_file:
+      - ./influx2.env
+    ports:
+      - 127.0.0.1:8086:8086
+    restart: always
 volumes:
   ipfs_data:
+  influxdb_data:
