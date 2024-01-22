@@ -1,11 +1,10 @@
 package icu.moecat.planetuniversal.web3j;
 
-import jakarta.annotation.PostConstruct;
+
 import org.springframework.stereotype.Service;
 import org.web3j.protocol.Web3j;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @Service
@@ -32,9 +31,5 @@ public class GasPrice {
     }
 
 
-    //@PostConstruct
-    public void test() throws IOException {
-        System.out.println(gasGweiPrice());
-    }
 
 }
